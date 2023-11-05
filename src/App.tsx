@@ -2,8 +2,8 @@ import { Dropdown } from "./components/Dropdown";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { InfoBox } from "./components/InfoBox";
-import * as exampleData from './exampleData';
-
+import { ScorePanel } from "./components/ScorePanel";
+import * as exampleData from "./exampleData";
 
 function App() {
 	return (
@@ -25,6 +25,12 @@ function App() {
 
 			<Dropdown choices={exampleData.composers} />
 			<Dropdown choices={exampleData.cities} />
+
+			<div className="flex mt-4">
+				{exampleData.playerResults.map((playerResult) => {
+					return <ScorePanel playerResult={playerResult} />;
+				})}
+			</div>
 
 			<Footer />
 		</>
