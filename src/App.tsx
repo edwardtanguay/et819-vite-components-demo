@@ -2,27 +2,8 @@ import { Dropdown } from "./components/Dropdown";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { InfoBox } from "./components/InfoBox";
+import * as exampleData from './exampleData';
 
-const composers = [
-	"Beethoven",
-	"Mozart",
-	"Bach",
-	"Tchaikovsky",
-	"Schubert",
-	"Brahms",
-	"Vivaldi"
-]; 
-
-const cities = [
-  "Paris",
-  "London",
-  "Berlin",
-  "Rome",
-  "Copenhagen",
-  "Stockholm",
-  "Athens",
-  "Brussels"
-];
 
 function App() {
 	return (
@@ -42,8 +23,8 @@ function App() {
 				stars={5}
 			/>
 
-			<Dropdown choices={composers} />
-			<Dropdown choices={cities} />
+			<Dropdown choices={exampleData.composers} />
+			<Dropdown choices={exampleData.cities} />
 
 			<Footer />
 		</>
