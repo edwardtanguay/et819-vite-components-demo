@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Dropdown } from "./components/Dropdown";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
@@ -7,6 +8,7 @@ import { Wrapper } from "./components/Wrapper";
 import * as exampleData from "./exampleData";
 
 function App() {
+	const [favorite, setFavorite] = useState("");
 	return (
 		<>
 			<Header />
@@ -33,9 +35,12 @@ function App() {
 
 			<Wrapper title="Scores">
 				<div className="flex">
-					{exampleData.playerResults.map((playerResult) => {
-						return <ScorePanel playerResult={playerResult} />;
-					})}
+					<div className="flex">
+						{exampleData.playerResults.map((playerResult) => {
+							return <ScorePanel playerResult={playerResult} setFavorite={setFavorite} />;
+						})}
+					</div>
+					<p className="flex justify-center w-full items-center text-4xl">{favorite}</p>
 				</div>
 			</Wrapper>
 
