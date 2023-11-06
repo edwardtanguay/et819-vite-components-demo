@@ -1,4 +1,4 @@
-// import { AiTwotoneStar } from 'react-icons/ai';
+import { Stars } from "./Stars";
 
 interface IProps {
 	title: string;
@@ -11,7 +11,7 @@ export const InfoBox = ({ title, body, stars, highlight = false} : IProps) => {
 	const sectionStyle = highlight ? "bg-yellow-300 border-4 border-red-500 p-4 rounded  shadow-gray-500 shadow-lg" : "bg-orange-300 p-4 rounded mt-4 shadow-gray-500 shadow-lg";
 	return (
 		<section className={sectionStyle}>
-			<h2 className="text-2xl mb-2 flex gap-2"><span>{title}</span> <div>{"*".repeat(stars)}</div></h2>
+			<h2 className="text-2xl mb-2 flex gap-2"><span>{title}</span> <Stars stars={stars}/></h2>
 			<p>{body}</p>
 		</section>
 	);
